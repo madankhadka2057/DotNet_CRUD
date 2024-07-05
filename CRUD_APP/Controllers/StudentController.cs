@@ -13,13 +13,17 @@ namespace CRUD_APP.Controllers
         {
             this.dbContext = dbContext;
         }
+
+
         //Show Add Student from!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         [HttpGet]
         public IActionResult Add()
         {
             return View();
         }
-        //Add Student into database!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+        //Add Student into the database!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         [HttpPost]
         public async Task<IActionResult>Add(AddStudentViewModel viewModel)
         {
@@ -35,6 +39,8 @@ namespace CRUD_APP.Controllers
             return RedirectToAction("List", "Student");
             //return View(newViewModel);
         }
+
+
         //Show Stuednt records!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         [HttpGet]
         public  IActionResult List()
@@ -43,6 +49,8 @@ namespace CRUD_APP.Controllers
             //return Json(data);
             return View(std);
         }
+
+
         //Delete Student record form database!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         public async Task<IActionResult> Delete(Student viewModel)
         {
@@ -59,6 +67,8 @@ namespace CRUD_APP.Controllers
                 return Json(new { success = false, message = "Student not found with that id" });
             }
         }
+
+
         // Show Edit Student record page also send data to input field!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         [HttpGet]
         public async Task<IActionResult> Edit(Guid id)
@@ -66,6 +76,8 @@ namespace CRUD_APP.Controllers
             var Data= await dbContext.Students.FindAsync(id);
             return View(Data);
         }
+
+
         //Edit Student record!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         [HttpPost]
         public async Task<IActionResult> Edit(Student viewModel)
