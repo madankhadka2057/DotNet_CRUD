@@ -1,0 +1,32 @@
+﻿html,
+body,
+.intro {
+    height: 100%;
+}
+
+table td,
+table th {
+    text-align:center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+a{
+    /*text-decoration:none;*/
+    color:white;
+}
+table .tablename {
+    background-color: forestgreen
+}
+
+.card {
+    border-radius: .5rem;
+}
+
+.table-scroll {
+    border-radius: .5rem;
+}
+
+thead {
+    top: 0;
+    position: sticky;
+}
