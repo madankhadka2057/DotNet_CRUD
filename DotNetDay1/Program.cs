@@ -73,16 +73,16 @@ public class Program()
         //var compare = name.Insert(5, "Khadka");//it will add khadka of index 5 of madan  
         //var compare = name.Length;//it will return length  of index 5 ,in this case i will return 5 because length of Madan is 5
         //var compare = name.Replace("an","hu");//it will remove the an from Madan and add hu output will be Madhu
-                //var compare=name.Split(" ");
-                //foreach (var word in compare)
-                //{
-                //    Console.WriteLine(word);
-                //}
+        //var compare=name.Split(" ");
+        //foreach (var word in compare)
+        //{
+        //    Console.WriteLine(word);
+        //}
         //var compare=name.Substring(0, name.Length-1);//it will return the value of name less then length-1 from end,in this case it return mada
         //var compare=name.Substring(1, name.Length-1);//it will return the value of name less then length-1 from start,in this case it return adan
         //var compare=name.ToUpper();// it will capatalize the value of name, in this case it will return the MADAN 
         //var compare=name.ToLower();//it will convert value of name in lowercase ,in this case it eill return madan
-        var compare=name.Clone();//it will Clone the value of name in compare variable
+        var compare = name.Clone();//it will Clone the value of name in compare variable
         Console.WriteLine(compare);
         Console.WriteLine(name);
         Console.WriteLine(name2);
@@ -90,10 +90,11 @@ public class Program()
 
     public static void Main()
     {
-        Program p=new Program();
+        Program p = new Program();
         p.name = "Madan";
         p.name2 = "Madan";
         p.Show();
     }
+}
 
 
