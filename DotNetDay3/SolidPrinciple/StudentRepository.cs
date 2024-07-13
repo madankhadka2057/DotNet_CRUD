@@ -18,12 +18,10 @@ namespace DotNetDay3.SolidPrinciple
         {
             return StudentList();
         }
-
         public Student GetStudentById(int id)
         {
             return StudentList().Where(x=>x.Id==id).First();
         }
-
         public void AddStudent(Student std)
         {
 
