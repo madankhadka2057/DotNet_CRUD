@@ -4,12 +4,12 @@ namespace DotNetDay3.SolidPrinciple
 {
     public interface IStudentService
     {
-        IEnumerable<Student>  getStudents();
+        public List<StudentDb>  GetStudents();
 
-        Student getStudentById(int id);
-        void AddStd(Student std);
-        void UpdateStd(Student std);
-        void DeleteStd(Student id);
+        public StudentDb GetStudentById(int id);
+        public void AddStd(StudentDb std);
+        public void UpdateStd(StudentDb std);
+        public void DeleteStd(StudentDb id);
 
     }
 }

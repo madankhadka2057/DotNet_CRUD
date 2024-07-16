@@ -1,32 +1,29 @@
 ﻿using DotNetDay3.Models;
-
 namespace DotNetDay3.SolidPrinciple
 {
     public class StudentRepository:IStudentRepository
     {
-        public List<Student> StudentList()
+        private readonly StudentContext _context;
+        public StudentRepository(StudentContext context)
         {
-            List<Student> std = new()
-            {
-                new Student {Id=1,Name="Madan",Address="Pyuthan" },
-                new Student {Id=2,Name="Hari",Address="Gulmi" },
-                new Student {Id=3,Name="Badri",Address="Pyuthan" },
-            };
-            return std;
+            _context = context;
         }
-        public IEnumerable<Student> GetList()
+        public List<StudentDb> GetList()
         {
-            return StudentList();
+            var students = _context.StudentDbs.ToList();
+            return students ;
         }
-        public Student GetStudentById(int id)
+        public StudentDb GetStudentById(int id)
         {
-            return StudentList().Where(x=>x.Id==id).First();
+              
+            StudentDb data= _context.StudentDbs.Where(x=>x.Id==id).First();
+              return data;
         }
-        public void AddStudent(Student std)
+        public void AddStudent(StudentDb std)
         {
 
         }
-        public void UpdateStudent(Student std)
+        public void UpdateStudent(StudentDb std)
         {
 
         }

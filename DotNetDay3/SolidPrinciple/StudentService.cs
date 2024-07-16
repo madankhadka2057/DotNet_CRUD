@@ -10,17 +10,17 @@ namespace DotNetDay3.SolidPrinciple
             _repo = repo;
         }
 
-        public IEnumerable<Student> getStudents() => _repo.GetList();
+        public List<StudentDb> GetStudents() => _repo.GetList();
 
-        public Student getStudentById(int id)
+        public StudentDb GetStudentById(int id)
         { 
             return _repo.GetStudentById(id);
         }
-        public void AddStd(Student std)
+        public void AddStd(StudentDb std)
         {
         }
-        public void UpdateStd(Student std) { }
-        public void DeleteStd(Student id) { }
+        public void UpdateStd(StudentDb std) { }
+        public void DeleteStd(StudentDb id) { }
 
     }
 }

@@ -1,7 +1,9 @@
+using DotNetDay3.Models;
 using DotNetDay3.Security;
 using DotNetDay3.SolidPrinciple;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotNetDay3
 {
@@ -16,7 +18,8 @@ namespace DotNetDay3
             builder.Services.AddScoped<IStudentRepository, StudentRepository>();
             builder.Services.AddScoped<IStudentService, StudentService>();
             builder.Services.AddSingleton<DataSecurityProvider>();
-
+            builder.Services.AddDbContext<StudentContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("Connection")));
+            
 
             var app = builder.Build();
             app.UseStaticFiles();

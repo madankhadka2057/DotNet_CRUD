@@ -1,5 +1,5 @@
 ﻿
-@model List<Student>
+@model List<StudentEdit>
 <link href="~/css/HomeIndex.css" rel="stylesheet" />
 <section class="intro p-5 mt-5">
   <div class="bg-image " >
@@ -13,23 +13,27 @@
                   <table class="table  table-dark mb-0">
                     <thead style="background-color: #393939;">
                       <tr class="text-uppercase text-success">
-                        <th class="tablename" scope="col">S.N</th>
                         <th class="tablename" scope="col">Id</th>
                         <th class="tablename" scope="col">Name</th>
-                        <th class="tablename" scope="col">Address</th>
+                        <th class="tablename" scope="col">Email</th>
+                        <th class="tablename" scope="col">Password</th>
+                        <th class="tablename" scope="col">Phone</th>
+                        <th class="tablename" scope="col">Status</th>
+                        <th class="tablename" scope="col">Role</th>
                       </tr>
                     </thead>
                     <tbody>
                     @{
-                        var count = 0;
                         foreach(var std in Model)
                         {
-                            count++;
                             <tr>
-                                <td>@count</td>
-                                <td> <a class="link" asp-action="Detail" asp-route-id="@std.encId">@std.Id</a></td>
+                                <td> <a class="link" asp-action="Detail" asp-route-id="@std.Id">@std.Id</a></td>
                                 <td>@std.Name</td>
-                                <td>@std.Address</td>
+                                <td>@std.Email</td>
+                                <td>@std.Password</td>
+                                <td>@std.Phone</td>
+                                <td>@std.Status</td>
+                                <td>@std.UserRole</td>
                           </tr>                      
                         }
                     }

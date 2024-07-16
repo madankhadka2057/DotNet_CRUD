@@ -1,0 +1,27 @@
+﻿@model DotNetDay3.Models.StudentEdit;
+<form action="/Student" method="post" enctype="multipart/form-data" class="container-md d-flex flex-row justify-content-center align-content-center">
+    <div class="card m-1 p-2 d-flex flex-column w-75  justify-content-center align-content-center  align-items-center">
+
+        <label class="form-label w-50 " asp-for="Name"> Name</label>
+        <input type="text" class="form-control w-50 mb-2 " placeholder=" Enter your name" asp-for="Name" />
+
+        <label class="form-label w-50" asp-for="Email">Email</label>
+        <input type="text" class="form-control w-50 mb-2" placeholder=" Enter your roll number" asp-for="Email" />
+
+        <label class="form-label w-50" asp-for="Password">Password</label>
+        <input type="text" class="form-control w-50 mb-2" placeholder=" Enter your roll number" asp-for="Password" />
+        
+        <label class="form-label w-50" asp-for="Email">Email</label>
+        <input type="text" class="form-control w-50 mb-2" placeholder=" Enter your roll number" asp-for="Email" />
+
+        <label class="form-label w-50" asp-for="Phone">Phone</label>
+        <input type="text" class="form-control w-50 mb-2" placeholder=" Enter your roll number" asp-for="Phone" />
+
+        <label class="form-label w-50" asp-for="UserRole">User Role</label>
+        <input type="text" class="form-control w-50 mb-2" placeholder=" Enter your roll number" asp-for="UserRole" />
+
+        <label class="form-label w-50" asp-for="FileUpload"> Image</label>
+        <input type="file" class="form-control  w-50 mb-2" asp-for="FileUpload" />
+        <button type="submit" asp-action='Create' asp-controller="Home" class="btn btn-primary w-25 mt-3">Register</button>
+    </div>
+</form>
